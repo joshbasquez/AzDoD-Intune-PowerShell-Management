@@ -55,6 +55,7 @@ ForEach ($cmdlet in $manifestData["CmdletsToExport"]) {
 if(Get-Module Microsoft.Graph.Intune -ListAvailable)
 {
    try{
+	Update-MSGraphEnvironment -AuthUrl 'https://login.microsoftonline.us/common' -GraphBaseUrl 'https://dod-graph.microsoft.us' -GraphResourceId 'https://dod-graph.microsoft.us' -SchemaVersion 'beta'
         Connect-MSGraph 
    }
    catch
